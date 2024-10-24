@@ -22,9 +22,28 @@ require("lazy").setup({
     { import = "plugins" },
     -- Add Ayu theme
     {
-      "Shatur/neovim-ayu",
+      "akinsho/horizon.nvim",
+      opts = {
+        plugins = {
+          cmp = true,
+          indent_blankline = true,
+          nvim_tree = true,
+          telescope = true,
+          which_key = true,
+          barbar = true,
+          notify = true,
+          symbols_outline = true,
+          neo_tree = true,
+          gitsigns = true,
+          crates = true,
+          hop = true,
+          navic = true,
+          quickscope = true,
+          flash = true,
+        }
+      },
       config = function()
-        vim.cmd("colorscheme ayu-dark")
+        vim.cmd("colorscheme horizon")
       end,
     },
   },
@@ -37,7 +56,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "ayu-dark", "tokyonight", "habamax" } },
+  install = { colorscheme = { "horizon", "ayu-dark", "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
